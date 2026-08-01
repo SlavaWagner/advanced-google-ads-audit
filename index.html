@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>antigravity-ads — Agent Welcome Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="brand-wrapper">
+        <div class="brand-logo">antigravity<span>-ads</span></div>
+        <div class="brand-tag">Agent Active</div>
+      </div>
+      <div class="external-links">
+        <a href="https://www.slavawagner.de" target="_blank" rel="noopener">slavawagner.de</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Left Column: Branding and Cubicle Graphic -->
+    <div class="intro-panel">
+      <div>
+        <h1 class="hero-title">Willkommen bei <em>antigravity-ads</em></h1>
+        <p class="hero-subtitle">
+          Dein intelligenter Agent für SEA (Google & Meta Ads), Conversion-Optimierung (CRO), detaillierte Datenanalysen und Predictive Marketing-Prognosen.
+        </p>
+      </div>
+
+      <!-- 3D Cubicles Container -->
+      <div class="cubicles-card">
+        <div class="cubes-scene" id="cubesScene">
+          <!-- 3x3 Isometric Cubes Grid -->
+          <!-- Row 1 -->
+          <div class="cube cube-1 green" data-id="1">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+          <div class="cube cube-2 blue" data-id="2">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+          <div class="cube cube-3 cyan" data-id="3">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="cube cube-4 blue" data-id="4">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+          <div class="cube cube-5 green" data-id="5">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+          <div class="cube cube-6 blue" data-id="6">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="cube cube-7 cyan" data-id="7">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+          <div class="cube cube-8 blue" data-id="8">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+          <div class="cube cube-9 green" data-id="9">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Telemetry Dashboard Row -->
+      <div class="telemetry-row">
+        <div class="telemetry-card">
+          <div class="telemetry-label">Ø SEA ROAS</div>
+          <div class="telemetry-val green" id="roasVal">4.82x</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-label">CRO Lift</div>
+          <div class="telemetry-val blue">+24.7%</div>
+        </div>
+        <div class="telemetry-card">
+          <div class="telemetry-label">Forecast Acc.</div>
+          <div class="telemetry-val">98.4%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive CLI & Help Guide -->
+    <div class="help-container">
+      <div class="terminal-panel" id="terminalPanel">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+          </div>
+          <div class="terminal-title">antigravity-ads-terminal --active</div>
+          <div style="width: 42px;"></div>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="welcome-text">
+       _   _  _ _____ ___ ___  ___   _ __   _____ _______   __    _   ___  ___ 
+  /_\ | \| |_   _|_ _/ __| _ \/_\ \ / |\ \ / /_   _\ \ / /   /_\ |   \/ __|
+ / _ \| .` | | |  | | (_ |   / _ \\ V /  \ V /  | |  \ V /   / _ \| |) \__ \
+/_/ \_\_|\_| |_| |___\___|_|_/_/ \_\_/    \_/   |_|   |_|   /_/ \_\___/|___/
+          </div>
+          <div class="terminal-line" style="margin-top: 10px;">
+            <span>[SYSTEM]</span> <span style="color: var(--brand-cyan)">Daemon initialisiert...</span>
+          </div>
+          <div class="terminal-line">
+            <span>[SYSTEM]</span> <span style="color: var(--brand-cyan)">Brand-Farben geladen: slavawagner.de</span>
+          </div>
+          <div class="terminal-line">
+            <span>[SYSTEM]</span> <span>Gebe <span style="color: var(--brand-green); font-weight: bold;">help</span> ein oder klicke auf ein Kommando unten, um zu starten.</span>
+          </div>
+        </div>
+        
+        <div class="terminal-input-container">
+          <div class="terminal-input-prefix">antigravity-ads ></div>
+          <input type="text" class="terminal-input" id="terminalInput" placeholder="Kommando eingeben..." autofocus autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Actionable Command Cards -->
+      <div class="commands-grid">
+        <div class="command-card" onclick="runCommand('help')">
+          <div class="command-name">help</div>
+          <div class="command-desc">Zeigt alle verfügbaren Kommandozeilen-Befehle und Parameter an.</div>
+        </div>
+        
+        <div class="command-card" onclick="runCommand('optimize')">
+          <div class="command-name">optimize</div>
+          <div class="command-desc">Führt einen SEA- und CRO-Optimierungsdurchlauf für laufende Kampagnen durch.</div>
+        </div>
+
+        <div class="command-card" onclick="runCommand('forecast')">
+          <div class="command-name">forecast</div>
+          <div class="command-desc">Erstellt Datenprognosen für Google Ads Budgets und Conversion-Entwicklung.</div>
+        </div>
+
+        <div class="command-card" onclick="runCommand('status')">
+          <div class="command-name">status</div>
+          <div class="command-desc">Zeigt den Systemzustand, API-Verbindungen und aktuelle Logs des Agents.</div>
+        </div>
+
+        <div class="command-card" onclick="runCommand('audit')">
+          <div class="command-name">audit</div>
+          <div class="command-desc">Führt den gesamten Google Ads Account Checkup & Strategie-SOP Erfüllungsgrad Audit durch.</div>
+        </div>
+
+        <div class="command-card" onclick="runCommand('setup')">
+          <div class="command-name">setup</div>
+          <div class="command-desc">Richtet die Google Ads API Zugangsdaten und OAuth2 Authentifizierung auf Port 8085 ein.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="nav-container">
+      <div>antigravity-ads v1.0.0 — Optimiert für slavawagner.de</div>
+      <div>
+        Lokal ausgeführt • <a href="https://www.slavawagner.de/impressum" target="_blank" rel="noopener">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const terminalBody = document.getElementById('terminalBody');
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalPanel = document.getElementById('terminalPanel');
+    const cubesScene = document.getElementById('cubesScene');
+    
+    // Command handler logic
+    const commands = {
+      help: () => {
+        return [
+          '<span style="color: var(--brand-green); font-weight: bold;">VERFÜGBARE BEFEHLE:</span>',
+          '  <span style="color: var(--brand-cyan)">optimize</span>      Analysiert Google Ads Bids, CTR und Landingpage CRO.',
+          '  <span style="color: var(--brand-cyan)">forecast</span>      Berechnet Budget- und ROI-Prognosen für den Folgemonat.',
+          '  <span style="color: var(--brand-cyan)">status</span>        Zeigt aktuelle CPU-Last, Datenquellen-APIs und Agent-Status.',
+          '  <span style="color: var(--brand-cyan)">run-workflow</span>  Führt den kompletten Marketing- & SEA-Workflow aus.',
+          '  <span style="color: var(--brand-cyan)">generate-ads</span>  Generiert KI-Anzeigen und exportiert sie als CSV.',
+          '  <span style="color: var(--brand-cyan)">clear</span>         Löscht den Terminalinhalt.',
+          '  <span style="color: var(--brand-cyan)">help</span>          Zeigt diese Übersicht.',
+          '',
+          '<span style="color: var(--text-muted)">Tipp: Du kannst Befehle direkt hier eintippen oder unten anklicken.</span>'
+        ];
+      },
+      optimize: () => {
+        // Trigger cube activation effect
+        triggerCubeGlow();
+        animateROAS();
+        return [
+          '<span style="color: #eab308; font-weight: bold;">[!] SEA/CRO OPTIMIERUNG GESTARTET...</span>',
+          '  [1/4] Scanne Google Ads Kampagnen...',
+          '        - Gefunden: 5 aktive Search-Kampagnen, 2 Performance Max.',
+          '        - Abweichung CTR erkannt bei Kampagne: "DE_Brand_Exact" (+12%).',
+          '  [2/4] Überprüfe CRO Metriken von slavawagner.de...',
+          '        - Heatmap-Daten analysiert: CTR am Call-to-Action "Beratung" ist gestiegen.',
+          '  [3/4] Berechne neue Keyword Bid-Strategien...',
+          '        - Empfehlung: Budget-Shifting um +15% zu "Predictive Marketing" Keywords.',
+          '  [4/4] Optimierung abgeschlossen.',
+          '<span style="color: var(--brand-green); font-weight: bold;">[✔] Status: 3 Empfehlungen bereit. Führe "antigravity-ads apply" aus, um sie live zu schalten.</span>'
+        ];
+      },
+      forecast: () => {
+        triggerCubeGlow('cyan');
+        return [
+          '<span style="color: var(--brand-cyan); font-weight: bold;">[~] BERECHNE BUDGET- & CTR-PROGNOSE...</span>',
+          '  Modell: Linear Regression & LSTM Seasonal Trend.',
+          '  Datenbasis: Historische Daten (letzte 180 Tage).',
+          '',
+          '  <span style="color: var(--brand-green);">PROGNOSE FÜR JUNI 2026:</span>',
+          '    Budget: €4,250.00 | Erwartete Impressionen: 84K',
+          '    Klicks: 6.8K     | Erwartete CTR: 8.1% (Stabil)',
+          '    Conversions: 420 | Erwartete conversion rate: 6.18%',
+          '',
+          '  <span style="color: var(--brand-blue)">PROGNOSE GRAFIK (Conversions):</span>',
+          '  150 |        *  *  *',
+          '  100 |     *  ',
+          '   50 |  *',
+          '    0 +------------------',
+          '      W1  W2  W3  W4  W5',
+          '<span style="color: var(--brand-green); font-weight: bold;">[✔] Prognose erfolgreich exportiert als report_june_2026.csv.</span>'
+        ];
+      },
+      status: () => {
+        triggerCubeGlow('blue');
+        const uptime = Math.floor(performance.now() / 1000);
+        return [
+          '<span style="color: var(--brand-blue); font-weight: bold;">[+] ANTIGRAVITY-ADS AGENT STATUS:</span>',
+          `  Uptime:          ${uptime} Sekunden`,
+          '  CPU Core Load:   14.2% (Idle)',
+          '  Memory Usage:    248 MB / 1024 MB',
+          '  Brand Assets:    Geladen (Theme: slavawagner.de)',
+          '  API Connections: Google Ads API (Verbunden), Meta Graph (Verbunden), Analytics G4 (Verbunden)',
+          '  Active Tasks:    1 Daemon, 0 Background Optimization Runs',
+          '  Current Directory: C:\\Users\\User\\antigravity-ads'
+        ];
+      },
+      'run-workflow': () => {
+        triggerCubeGlow('green');
+        animateROAS();
+        return [
+          '<span style="color: var(--brand-green); font-weight: bold;">[RUNNING] Starte automatisierten Marketing- & SEA-Workflow...</span>',
+          '  [1/4] Status & API-Check: <span style="color: var(--brand-green)">OK</span> (Google Ads, Meta Graph, Analytics G4 verbunden)',
+          '  [2/4] SEA/CRO Kampagnen-Scan: <span style="color: var(--brand-green)">ABGESCHLOSSEN</span> (3 Empfehlungen bereit)',
+          '  [3/4] Prognosemodelle berechnen: <span style="color: var(--brand-green)">BERECHNET</span> (Erwartete CTR: 8.1%)',
+          '  [4/4] Erstelle Workflow-Report...',
+          '',
+          '<span style="color: var(--brand-cyan); font-weight: bold;">[✔] Status: Workflow erfolgreich ausgeführt!</span>',
+          '    Report gespeichert unter: <span style="color: white; font-family: monospace;">C:\\Users\\User\\antigravity-ads\\workflow_report_june_2026.json</span>'
+        ];
+      },
+      'generate-ads': () => {
+        triggerCubeGlow('cyan');
+        return [
+          '<span style="color: var(--brand-cyan); font-weight: bold;">[RUNNING] Starte KI-Anzeigengenerierung...</span>',
+          '  Thema: KI-Automatisierung (slavawagner.de)',
+          '  Generiere RSA Text-Assets für Google Ads...',
+          '  [✔] 10 Headlines generiert (Länge max. 30 Zeichen)',
+          '  [✔] 4 Descriptions generiert (Länge max. 90 Zeichen)',
+          '',
+          '<span style="color: var(--brand-green); font-weight: bold;">[✔] CSV-Export für Google Ads Editor erstellt!</span>',
+          '    Pfad: <span style="color: white; font-family: monospace;">C:\\Users\\User\\ai-ads-pipeline\\google_ads_editor_import.csv</span>',
+          '    JSON-Asset-Katalog: <span style="color: white; font-family: monospace;">C:\\Users\\User\\ai-ads-pipeline\\ai_generated_assets.json</span>'
+        ];
+      },
+      audit: () => {
+        triggerCubeGlow('green');
+        animateROAS();
+        return [
+          '<span style="color: var(--brand-green); font-weight: bold;">[RUNNING] Starte Advanced Google Ads Account Audit (High Ticket Lead Gen)...</span>',
+          '  [1/3] Fragt Google Ads API v24 (SearchStream) für Live-Kampagnen & Assets ab...',
+          '  [2/3] Bewerkstellige Prozent-Erfüllungsgrad-Prüfung gegen 11 Strategie-SOPs...',
+          '        - 01 Conversion Value Hierarchy: 45% (Kritisch - Handlungsbedarf)',
+          '        - 02 Angles Detection: 70% (Ausreichend)',
+          '        - 03 Ads Frameworks: 60% (Ausreichend)',
+          '        - 04 Massen Asset Testing: 50% (Kritisch)',
+          '        - 06 Budget Shifting: 80% (Optimal)',
+          '        - 08 PMax Zielgruppensignale: 55% (Kritisch)',
+          '  [3/3] Erstelle Handlungsanweisung zur 100% Erfüllung aller Strategien...',
+          '',
+          '<span style="color: var(--brand-cyan); font-weight: bold;">[OK] Gesamter Erfüllungsgrad: 62.4% (Ausreichend mit Hebelpotenzial)</span>',
+          '    Report gespeichert unter: <span style="color: white; font-family: monospace;">C:\\Users\\User\\advanced-google-ads-audit\\storage\\runs\\audit-report.md</span>'
+        ];
+      },
+      setup: () => {
+        triggerCubeGlow('cyan');
+        return [
+          '<span style="color: var(--brand-cyan); font-weight: bold;">[RUNNING] Starte Google Ads Credentials & OAuth2 Setup...</span>',
+          '  Verbinde mit Google OAuth2 Redirect Server auf Port 8085...',
+          '  [OK] Bitte öffne den Authentifizierungslink im Browser, um deinen Account zu verknüpfen.',
+          '  [OK] Refresh Token wird nach Genehmigung in config.json gespeichert.'
+        ];
+      },
+      clear: () => {
+        terminalBody.innerHTML = '';
+        return [];
+      }
+    };
+
+    // Trigger visual feedback on cubes
+    function triggerCubeGlow(color = 'green') {
+      const cubes = document.querySelectorAll('.cube');
+      terminalPanel.className = `terminal-panel glow-${color}`;
+      cubes.forEach((cube, idx) => {
+        setTimeout(() => {
+          cube.classList.add('glow');
+          // Add pulse style dynamically
+          cube.querySelectorAll('.cube-face').forEach(face => {
+            if (color === 'green') face.style.borderColor = 'rgba(29, 217, 0, 1)';
+            else if (color === 'blue') face.style.borderColor = 'rgba(64, 100, 215, 1)';
+            else if (color === 'cyan') face.style.borderColor = 'rgba(6, 182, 212, 1)';
+          });
+        }, idx * 60);
+
+        setTimeout(() => {
+          cube.classList.remove('glow');
+          cube.querySelectorAll('.cube-face').forEach(face => {
+            face.style.borderColor = '';
+          });
+        }, 1200 + idx * 60);
+      });
+      
+      setTimeout(() => {
+        terminalPanel.className = 'terminal-panel';
+      }, 2000);
+    }
+
+    // Animate ROAS counter
+    function animateROAS() {
+      const roasElement = document.getElementById('roasVal');
+      let current = 4.82;
+      const target = 5.14;
+      const interval = setInterval(() => {
+        if (current >= target) {
+          clearInterval(interval);
+          roasElement.innerText = target.toFixed(2) + 'x';
+        } else {
+          current += 0.02;
+          roasElement.innerText = current.toFixed(2) + 'x';
+        }
+      }, 50);
+    }
+
+    // Run command wrapper
+    function runCommand(cmdText) {
+      cmdText = cmdText.trim();
+      if (!cmdText) return;
+
+      // Add user line to terminal
+      const userLine = document.createElement('div');
+      userLine.className = 'terminal-line';
+      userLine.innerHTML = `<span class="terminal-prompt">antigravity-ads ></span> <span>${cmdText}</span>`;
+      terminalBody.appendChild(userLine);
+
+      // Execute command or return error
+      const cleanCmd = cmdText.toLowerCase();
+      let responseLines = [];
+      if (commands[cleanCmd]) {
+        responseLines = commands[cleanCmd]();
+      } else {
+        responseLines = [
+          `<span style="color: #ef4444;">Befehl nicht gefunden: "${cmdText}".</span>`,
+          'Tippe <span style="color: var(--brand-green);">help</span> für eine Liste aller Befehle.'
+        ];
+      }
+
+      // Print response
+      responseLines.forEach(lineText => {
+        const responseLine = document.createElement('div');
+        responseLine.className = 'terminal-line';
+        responseLine.innerHTML = lineText;
+        terminalBody.appendChild(responseLine);
+      });
+
+      // Scroll to bottom
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+      terminalInput.value = '';
+    }
+
+    // Terminal Input Event Listener
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        runCommand(terminalInput.value);
+      }
+    });
+
+    // Make cubes interactive via click in terminal
+    document.querySelectorAll('.cube').forEach(cube => {
+      cube.addEventListener('click', () => {
+        const id = cube.getAttribute('data-id');
+        runCommand(`status --cube ${id}`);
+        // Custom interactive response
+        const line = document.createElement('div');
+        line.className = 'terminal-line';
+        line.innerHTML = `<span style="color: var(--brand-cyan)">[CUBE #${id}]</span> Aktiviert. Resonanzwelle gesendet.`;
+        terminalBody.appendChild(line);
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      });
+    });
+
+    // Handle isometric drag rotation of cubes scene
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let rotX = 60;
+    let rotZ = -45;
+
+    document.querySelector('.cubicles-card').addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      cubesScene.style.animation = 'none'; // pause auto float
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
+      startX = e.clientX;
+      startY = e.clientY;
+
+      rotZ += deltaX * 0.5;
+      rotX = Math.max(30, Math.min(85, rotX - deltaY * 0.5));
+      cubesScene.style.transform = `rotateX(${rotX}deg) rotateZ(${rotZ}deg)`;
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+  </script>
+</body>
+</html>

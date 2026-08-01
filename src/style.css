@@ -1,0 +1,547 @@
+/* @import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap');
+
+/* Brand Design Tokens */
+:root {
+  --bg-darker: #090d16;
+  --bg-dark: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.6);
+  --bg-terminal: rgba(15, 23, 42, 0.9);
+  --border-color: rgba(51, 65, 85, 0.5);
+  --border-color-glow: rgba(29, 217, 0, 0.3);
+  
+  --brand-green: #1dd900;
+  --brand-green-rgb: 29, 217, 0;
+  --brand-green-glow: rgba(29, 217, 0, 0.25);
+  
+  --brand-blue: #4064d7;
+  --brand-blue-rgb: 64, 100, 215;
+  --brand-blue-glow: rgba(64, 100, 215, 0.25);
+
+  --brand-cyan: #06b6d4;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --glow-shadow-green: 0 0 20px var(--brand-green-glow);
+  --glow-shadow-blue: 0 0 20px var(--brand-blue-glow);
+}
+
+/* Global Reset & Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-darker);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(64, 100, 215, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(29, 217, 0, 0.08) 0%, transparent 45%);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-green);
+}
+
+/* Layout Containers */
+header {
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(11, 15, 25, 0.8);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fff 40%, var(--brand-green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo span {
+  color: var(--brand-blue);
+  -webkit-text-fill-color: initial;
+}
+
+.brand-tag {
+  background: rgba(29, 217, 0, 0.1);
+  border: 1px solid var(--brand-green);
+  color: var(--brand-green);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.external-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.external-links a:hover {
+  color: var(--brand-green);
+  text-shadow: 0 0 8px var(--brand-green-glow);
+}
+
+main {
+  max-width: 1400px;
+  margin: 2.5rem auto;
+  padding: 0 2rem;
+  width: 100%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Column: Hero & Interactive Cubicles */
+.intro-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--brand-green);
+  text-shadow: 0 0 15px rgba(29, 217, 0, 0.2);
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  max-width: 540px;
+}
+
+/* The Cubicles 3D Visualizer */
+.cubicles-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
+  perspective: 1000px;
+}
+
+.cubicles-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.8) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Isometric Cubes Grid */
+.cubes-scene {
+  position: absolute;
+  transform: rotateX(60deg) rotateZ(-45deg);
+  transform-style: preserve-3d;
+  width: 200px;
+  height: 200px;
+  animation: sceneFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes sceneFloat {
+  0% { transform: rotateX(60deg) rotateZ(-40deg) translateY(0px); }
+  100% { transform: rotateX(60deg) rotateZ(-50deg) translateY(-15px); }
+}
+
+.cube {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Position mapping for the grid cubes */
+.cube-1 { transform: translate3d(0px, 0px, 0px); }
+.cube-2 { transform: translate3d(60px, 0px, 10px); }
+.cube-3 { transform: translate3d(120px, 0px, 0px); }
+.cube-4 { transform: translate3d(0px, 60px, 20px); }
+.cube-5 { transform: translate3d(60px, 60px, 40px); } /* center higher */
+.cube-6 { transform: translate3d(120px, 60px, 15px); }
+.cube-7 { transform: translate3d(0px, 120px, 0px); }
+.cube-8 { transform: translate3d(60px, 120px, 5px); }
+.cube-9 { transform: translate3d(120px, 120px, 0px); }
+
+.cube-face {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+  background: rgba(30, 41, 59, 0.85);
+  transition: var(--transition-smooth);
+}
+
+/* Cube layout configuration */
+.cube-face.front  { transform: rotateY(0deg) translateZ(20px); }
+.cube-face.back   { transform: rotateY(180deg) translateZ(20px); }
+.cube-face.right  { transform: rotateX(90deg) translateZ(20px); }
+.cube-face.left   { transform: rotateX(-90deg) translateZ(20px); }
+.cube-face.top    { transform: rotateY(90deg) translateZ(20px); }
+.cube-face.bottom { transform: rotateY(-90deg) translateZ(20px); }
+
+/* Color classes for cubes matching slavawagner.de theme */
+.cube.green .cube-face {
+  border-color: rgba(29, 217, 0, 0.4);
+  box-shadow: inset 0 0 8px rgba(29, 217, 0, 0.15);
+}
+.cube.green .cube-face.top {
+  background: var(--brand-green);
+  box-shadow: 0 0 20px var(--brand-green-glow);
+}
+
+.cube.blue .cube-face {
+  border-color: rgba(64, 100, 215, 0.4);
+  box-shadow: inset 0 0 8px rgba(64, 100, 215, 0.15);
+}
+.cube.blue .cube-face.top {
+  background: var(--brand-blue);
+  box-shadow: 0 0 20px var(--brand-blue-glow);
+}
+
+.cube.cyan .cube-face {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: inset 0 0 8px rgba(6, 182, 212, 0.15);
+}
+.cube.cyan .cube-face.top {
+  background: var(--brand-cyan);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+/* Dynamic cube animation on hover */
+.cube:hover {
+  transform: translateZ(25px) scale(1.15) !important;
+  cursor: pointer;
+}
+
+.cube:hover .cube-face {
+  border-color: #fff;
+}
+
+/* Right Column: Console & Commands Help list */
+.help-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.terminal-panel {
+  background: var(--bg-terminal);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+}
+
+.terminal-panel.glow-green {
+  border-color: var(--brand-green);
+  box-shadow: 0 0 25px rgba(29, 217, 0, 0.15);
+}
+
+.terminal-header {
+  background: rgba(30, 41, 59, 0.5);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.terminal-dot.red { background: #ef4444; }
+.terminal-dot.yellow { background: #eab308; }
+.terminal-dot.green { background: #22c55e; }
+
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.terminal-body {
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.terminal-body .welcome-text {
+  color: var(--brand-green);
+}
+
+.terminal-line {
+  display: flex;
+  gap: 0.5rem;
+  line-height: 1.5;
+}
+
+.terminal-prompt {
+  color: var(--brand-blue);
+  font-weight: bold;
+  user-select: none;
+}
+
+.terminal-input-container {
+  border-top: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(11, 15, 25, 0.4);
+}
+
+.terminal-input-prefix {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--brand-green);
+  user-select: none;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+/* Command Cards Listing */
+.commands-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .commands-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.command-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.command-card:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: var(--brand-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-shadow-blue);
+}
+
+.command-card.full-width {
+  grid-column: span 2;
+}
+
+@media (max-width: 640px) {
+  .command-card.full-width {
+    grid-column: span 1;
+  }
+}
+
+.command-name {
+  font-family: var(--font-mono);
+  color: var(--brand-green);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.command-name::after {
+  content: '→';
+  font-size: 1rem;
+  opacity: 0;
+  transition: var(--transition-smooth);
+  transform: translateX(-5px);
+}
+
+.command-card:hover .command-name::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.command-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Feature tags / Analytics Telemetry Widgets */
+.telemetry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.telemetry-card {
+  background: rgba(11, 15, 25, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.telemetry-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.telemetry-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.telemetry-val.green {
+  color: var(--brand-green);
+  text-shadow: 0 0 10px rgba(29, 217, 0, 0.2);
+}
+
+.telemetry-val.blue {
+  color: var(--brand-blue);
+  text-shadow: 0 0 10px rgba(64, 100, 215, 0.2);
+}
+
+/* Footer Section */
+footer {
+  border-top: 1px solid var(--border-color);
+  background: rgba(9, 13, 22, 0.9);
+  padding: 1.5rem 2rem;
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+footer .footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  footer .footer-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+footer a:hover {
+  color: var(--brand-green);
+}

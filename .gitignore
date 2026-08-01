@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Local configuration files
+config.json
+
+# Local runtime storage and execution logs
+storage/
+runs/
+
+# System and logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
