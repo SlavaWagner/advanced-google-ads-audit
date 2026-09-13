@@ -97,13 +97,12 @@ advanced-google-ads-audit setup
 
 Alle Befehle werden innerhalb der Google Antigravity CLI (`agy`) ausgeführt:
 
-| Befehl | Argumente / Optionen | Kurzbeschreibung |
-| :--- | :--- | :--- |
-| `advanced-google-ads-audit audit`<br>*(Alias: `checkup`)* | `-c, --customer-id <id>` | Führt den vollständigen Account-Checkup durch: Ruft Kampagnen, Bidding-Strategien und Assets über die Google Ads API v24 ab, gleicht diese mit den 11 Strategie-SOPs ab und speichert detaillierte Reports (JSON & Markdown). |
-| `advanced-google-ads-audit dashboard` | `-p, --port <number>` *(Default: 8080)* | Startet den visuellen Web-Dashboard-Server zur interaktiven Analyse von Compliance-Scoreboards, Lücken und Handlungsschritten im Browser. |
-| `advanced-google-ads-audit agent list` | Keine | Listet alle registrierten persistenten Audit-Agenten mit Rolle, Prompt und Beschreibung auf. |
-| `advanced-google-ads-audit refresh-token` | Keine | Erneuert das OAuth2 Access Token für die Google Ads API v24 manuell. |
-| `advanced-google-ads-audit setup` | Keine | Interaktiver Konfigurationsassistent für Google Ads API Credentials (Customer ID, Client ID/Secret, Developer Token) und OAuth2-Autorisierung auf Port 8085. |
+| Befehl | Kurzbeschreibung |
+| :--- | :--- |
+| `advanced-google-ads-audit audit`<br>*(Alias: `checkup`)* | Führt den vollständigen Account-Checkup durch: Ruft Kampagnen, Bidding-Strategien und Assets über die Google Ads API v24 ab, gleicht diese mit den 11 Strategie-SOPs ab und speichert detaillierte Reports (JSON & Markdown). |
+| `advanced-google-ads-audit agent list` | Listet alle registrierten persistenten Audit-Agenten mit Rolle, Prompt und Beschreibung auf. |
+| `advanced-google-ads-audit refresh-token` | Erneuert das OAuth2 Access Token für die Google Ads API v24 manuell. |
+| `advanced-google-ads-audit setup` | Interaktiver Konfigurationsassistent für Google Ads API Credentials (Customer ID, Client ID/Secret, Developer Token) und OAuth2-Autorisierung auf Port 8085. |
 
 #### Anwendungsbeispiele:
 
@@ -114,10 +113,7 @@ advanced-google-ads-audit audit
 # 2. Audit für eine abweichende Kundennummer ausführen:
 advanced-google-ads-audit audit -c 987-654-3210
 
-# 3. Visuelles Web-Dashboard auf Port 8080 starten:
-advanced-google-ads-audit dashboard -p 8080
-
-# 4. OAuth-Token manuell auffrischen:
+# 3. OAuth-Token manuell auffrischen:
 advanced-google-ads-audit refresh-token
 ```
 
