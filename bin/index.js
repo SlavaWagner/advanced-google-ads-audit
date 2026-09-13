@@ -48,11 +48,75 @@ function getAsciiLogo() {
   ].join('\n');
 }
 
+// Check if running inside Google Antigravity CLI (agy)
+function isRunningInsideAntigravity() {
+  // Developer/CLI bypass flag
+  if (process.argv.includes('--force') || process.argv.includes('--inside-agy')) {
+    return true;
+  }
+  return Boolean(
+    process.env.ANTIGRAVITY_PROJECT_ID ||
+    process.env.ANTIGRAVITY_LS_VERSION ||
+    process.env.ANTIGRAVITY_SOURCE_METADATA ||
+    process.env.ANTIGRAVITY_TRAJECTORY_ID ||
+    process.env.ANTIGRAVITY_AGENT ||
+    process.env.JETSKI_APP_DATA_DIR ||
+    process.env.AGY_SESSION ||
+    process.env.AGY
+  );
+}
+
+// Interceptor notice: skips static output and instructs user to start Antigravity
+function showAgyPrerequisiteWarning(attemptedCmd) {
+  const yellowBox = chalk.hex('#eab308');
+  const greenText = chalk.bold.hex('#1dd900');
+  const cyanText = chalk.bold.hex('#06b6d4');
+  const whiteBold = chalk.bold.white;
+  
+  console.log(getAsciiLogo());
+  console.log(yellowBox('================================================================================'));
+  console.log(yellowBox('⚠️   VORBEDINGUNG ERFORDERLICH: GOOGLE ANTIGRAVITY CLI ("agy")'));
+  console.log(yellowBox('================================================================================'));
+  console.log();
+  console.log(whiteBold('  Advanced Google Ads Audit funktioniert ausschließlich'));
+  console.log(whiteBold('  INNERHALB der Antigravity CLI!'));
+  console.log();
+  console.log(chalk.yellow('  Starte bitte vorher Antigravity mit dem Befehl "agy" und anschließend'));
+  console.log(chalk.yellow('  kannst du mit den Befehlen von advanced-google-ads-audit chatten und die'));
+  console.log(chalk.yellow('  Audit- und Compliance-Workflows bedienen.'));
+  console.log();
+  console.log(chalk.gray('  Hinweis: Auf dieser normalen Terminal-Ebene findet keine KI-Verarbeitung statt.'));
+  console.log(chalk.gray('  Die Wiedergabe statischer Outputs wurde übersprungen.'));
+  console.log();
+  console.log(cyanText('  👉 SCHRITT 1:'));
+  console.log(whiteBold('     Öffne deine Konsole und starte Antigravity mit folgendem Befehl:'));
+  console.log();
+  console.log('        ' + greenText('agy'));
+  console.log();
+  console.log(cyanText('  👉 SCHRITT 2:'));
+  console.log(whiteBold('     In Antigravity kannst du interaktiv mit den Google Ads Audit Agenten'));
+  console.log(whiteBold('     chatten und sämtliche Konto-Audits und SOP-Compliance-Prüfungen steuern.'));
+  console.log();
+  console.log(yellowBox('================================================================================'));
+  console.log(chalk.gray('  (Web-Dashboard starten:  advanced-google-ads-audit dashboard)'));
+  console.log(chalk.gray('  (Entwickler-Override:   Befehl mit "--force" oder "--inside-agy" ausführen)'));
+  console.log();
+}
+
+// Intercept execution early if executed in normal shell outside Antigravity
+const rawArgs = process.argv.slice(2);
+const isDashboardRequested = rawArgs.includes('dashboard');
+
+if (!isRunningInsideAntigravity() && !isDashboardRequested) {
+  showAgyPrerequisiteWarning(rawArgs.join(' '));
+  process.exit(0);
+}
+
 const program = new Command();
 
 program
   .name('advanced-google-ads-audit')
-  .description('Advanced Google Ads Audit AI Agent (High Ticket Lead Gen)')
+  .description('Advanced Google Ads Audit AI Agent (High Ticket Lead Gen) (requires Antigravity CLI)')
   .version('1.0.0');
 
 program.addHelpText('before', getAsciiLogo());
