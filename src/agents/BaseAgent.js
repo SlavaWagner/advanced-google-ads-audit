@@ -1,4 +1,4 @@
-import { getAgent } from '../storage.js';
+﻿import { getAgent } from '../storage.js';
 import { generateText } from '../gemini.js';
 import { getConfig } from '../config.js';
 
@@ -18,7 +18,7 @@ export default class BaseAgent {
     this.description = config.description;
     this.systemPrompt = config.systemPrompt;
     this.skills = config.skills || [];
-    this.model = config.model || 'gemini-1.5-flash';
+    this.model = config.model || 'antigravity';
     this.logs = [];
   }
 
@@ -91,3 +91,4 @@ export default class BaseAgent {
     }
   }
 }
+

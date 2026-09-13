@@ -1,4 +1,4 @@
-import fs from 'fs';
+﻿import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -14,7 +14,7 @@ const DEFAULT_AGENTS = {
     description: 'Queries the Google Ads API (v24), fetches live campaign & asset structures, evaluates percentage compliance against 11 strategy SOPs, and outputs an actionable audit report.',
     systemPrompt: 'You are the official Advanced Google Ads Audit Agent for High Ticket Lead Gen. You analyze live account data and produce comprehensive strategy compliance checkups.',
     skills: ['FetchAdsSkill', 'LLMGenerateSkill'],
-    model: 'gemini-1.5-flash'
+    model: 'antigravity'
   }
 };
 
@@ -71,3 +71,4 @@ export function saveRunLog(runLog) {
   fs.writeFileSync(logPath, JSON.stringify(runLog, null, 2), 'utf8');
   return logPath;
 }
+

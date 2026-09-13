@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+﻿import { GoogleGenerativeAI } from '@google/generative-ai';
 import chalk from 'chalk';
 import readline from 'readline';
 
@@ -28,11 +28,11 @@ function getMultilineInput() {
  * @param {string} apiKey - The Gemini API Key.
  * @param {string} systemPrompt - The system instructions for the model.
  * @param {string} userPrompt - The user prompt/content.
- * @param {string} [modelName] - Name of the Gemini model to use (default: gemini-1.5-flash).
+ * @param {string} [modelName] - Name of the Gemini model to use (default: antigravity).
  * @param {boolean} [jsonMode] - Request output in JSON format (default: false).
  * @returns {Promise<string>} The generated text.
  */
-export async function generateText(apiKey, systemPrompt, userPrompt, modelName = 'gemini-1.5-flash', jsonMode = false) {
+export async function generateText(apiKey, systemPrompt, userPrompt, modelName = 'antigravity', jsonMode = false) {
   const isBridge = !apiKey || apiKey.toLowerCase() === 'antigravity' || apiKey.toLowerCase() === 'bridge';
 
   if (isBridge) {
@@ -150,4 +150,5 @@ export async function generateText(apiKey, systemPrompt, userPrompt, modelName =
     throw new Error(`Gemini API Error: ${error.message}`);
   }
 }
+
 
