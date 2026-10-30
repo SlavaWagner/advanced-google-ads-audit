@@ -1,27 +1,25 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { input, select } from '@inquirer/prompts';
+import { input } from '@inquirer/prompts';
 import chalk from 'chalk';
 import http from 'http';
 import { URL, fileURLToPath } from 'url';
 import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
-import { exec } from 'child_process';
 
 import { getConfig, saveConfig, getAccessToken, refreshAccessToken } from '../src/config.js';
-import { listAgents, getAgent, saveAgent, saveRunLog, initStorage } from '../src/storage.js';
-import BaseAgent from '../src/agents/BaseAgent.js';
+import { listAgents, initStorage } from '../src/storage.js';
 import AuditAgent from '../src/agents/AuditAgent.js';
 
 // Initialize storage folders and default agent configurations
 initStorage();
 
 function getAsciiLogo() {
-  const greenCube = chalk.hex('#1dd900');
+  const greenCube = chalk.hex('#159A35');
   const cyanCube = chalk.hex('#06b6d4');
-  const blueCube = chalk.hex('#4064d7');
+  const blueCube = chalk.hex('#2563EB');
   
   return [
     '',
@@ -43,14 +41,13 @@ function getAsciiLogo() {
     '',
     chalk.bold.green('=== Advanced Google Ads Audit (High Ticket Lead Gen) ==='),
     chalk.cyan('Account Checkup & Strategy SOP Compliance Audit Engine'),
-    chalk.gray('This AI Agent was created with the help of Google Antigravity CLI'),
+    chalk.gray('Created with the Google Antigravity CLI ecosystem'),
     ''
   ].join('\n');
 }
 
 // Check if running inside Google Antigravity CLI (agy)
 function isRunningInsideAntigravity() {
-  // Developer/CLI bypass flag
   if (process.argv.includes('--force') || process.argv.includes('--inside-agy')) {
     return true;
   }
@@ -66,44 +63,43 @@ function isRunningInsideAntigravity() {
   );
 }
 
-// Interceptor notice: skips static output and instructs user to start Antigravity
+// Interceptor notice: instructs user to start Antigravity
 function showAgyPrerequisiteWarning(attemptedCmd) {
   const yellowBox = chalk.hex('#eab308');
-  const greenText = chalk.bold.hex('#1dd900');
+  const greenText = chalk.bold.hex('#159A35');
   const cyanText = chalk.bold.hex('#06b6d4');
   const whiteBold = chalk.bold.white;
   
   console.log(getAsciiLogo());
   console.log(yellowBox('================================================================================'));
-  console.log(yellowBox('⚠️   VORBEDINGUNG ERFORDERLICH: GOOGLE ANTIGRAVITY CLI ("agy")'));
+  console.log(yellowBox('⚠️   PREREQUISITE REQUIRED: GOOGLE ANTIGRAVITY CLI ("agy")'));
   console.log(yellowBox('================================================================================'));
   console.log();
-  console.log(whiteBold('  Advanced Google Ads Audit funktioniert ausschließlich'));
-  console.log(whiteBold('  INNERHALB der Antigravity CLI!'));
+  console.log(whiteBold('  Advanced Google Ads Audit operates exclusively'));
+  console.log(whiteBold('  INSIDE the Antigravity CLI environment!'));
   console.log();
-  console.log(chalk.yellow('  Starte bitte vorher Antigravity mit dem Befehl "agy" und anschließend'));
-  console.log(chalk.yellow('  kannst du mit den Befehlen von advanced-google-ads-audit chatten und die'));
-  console.log(chalk.yellow('  Audit- und Compliance-Workflows bedienen.'));
+  console.log(chalk.yellow('  Please start Antigravity beforehand using the command "agy", and then'));
+  console.log(chalk.yellow('  interactively execute the advanced-google-ads-audit commands to manage'));
+  console.log(chalk.yellow('  account audits and strategy SOP compliance workflows.'));
   console.log();
-  console.log(chalk.gray('  Hinweis: Auf dieser normalen Terminal-Ebene findet keine KI-Verarbeitung statt.'));
-  console.log(chalk.gray('  Die Wiedergabe statischer Outputs wurde übersprungen.'));
+  console.log(chalk.gray('  Notice: Outside the Antigravity CLI shell, AI processing is halted.'));
+  console.log(chalk.gray('  Static output rendering has been bypassed.'));
   console.log();
-  console.log(cyanText('  👉 SCHRITT 1:'));
-  console.log(whiteBold('     Öffne deine Konsole und starte Antigravity mit folgendem Befehl:'));
+  console.log(cyanText('  👉 STEP 1:'));
+  console.log(whiteBold('     Open your terminal and launch Antigravity with:'));
   console.log();
   console.log('        ' + greenText('agy'));
   console.log();
-  console.log(cyanText('  👉 SCHRITT 2:'));
-  console.log(whiteBold('     In Antigravity kannst du interaktiv mit den Google Ads Audit Agenten'));
-  console.log(whiteBold('     chatten und sämtliche Konto-Audits und SOP-Compliance-Prüfungen steuern.'));
+  console.log(cyanText('  👉 STEP 2:'));
+  console.log(whiteBold('     Inside Antigravity, interactively chat with the audit agents and'));
+  console.log(whiteBold('     trigger individual strategy SOP checks or full account compliance audits.'));
   console.log();
   console.log(yellowBox('================================================================================'));
-  console.log(chalk.gray('  (Web-Dashboard starten:  advanced-google-ads-audit dashboard)'));
-  console.log(chalk.gray('  (Entwickler-Override:   Befehl mit "--force" oder "--inside-agy" ausführen)'));
+  console.log(chalk.gray('  (Developer Override: Execute command with "--force" or "--inside-agy")'));
   console.log();
 }
 
-// Intercept execution early if executed in normal shell outside Antigravity
+// Intercept execution early if executed outside Antigravity
 const rawArgs = process.argv.slice(2);
 const isDashboardRequested = rawArgs.includes('dashboard');
 
@@ -112,11 +108,14 @@ if (!isRunningInsideAntigravity() && !isDashboardRequested) {
   process.exit(0);
 }
 
+// Strip bypass flags so Commander doesn't choke on them
+process.argv = process.argv.filter(arg => arg !== '--force' && arg !== '--inside-agy');
+
 const program = new Command();
 
 program
   .name('advanced-google-ads-audit')
-  .description('Advanced Google Ads Audit AI Agent (High Ticket Lead Gen) (requires Antigravity CLI)')
+  .description('Advanced Google Ads Audit AI Agent (High Ticket Lead Gen) - Account checkup & SOP strategy compliance auditing')
   .version('1.0.0');
 
 program.addHelpText('before', getAsciiLogo());
@@ -124,7 +123,7 @@ program.addHelpText('before', getAsciiLogo());
 // SETUP Command
 program
   .command('setup')
-  .description('Setup Google Ads Credentials and Authorize OAuth2')
+  .description('Setup Google Ads API Credentials and Authorize OAuth2')
   .action(async () => {
     console.log(chalk.bold.cyan('\n=== Google Ads Credentials & OAuth2 Setup ===\n'));
 
@@ -170,7 +169,7 @@ program
       const redirectUri = 'http://localhost:8085';
       const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=https://www.googleapis.com/auth/adwords&access_type=offline&prompt=consent`;
 
-      console.log(chalk.green('\nPlease open the following link in your browser to authorize access:\n'));
+      console.log(chalk.green('\nPlease open the following authorization URL in your browser:\n'));
       console.log(chalk.underline.blue(authUrl));
       console.log(chalk.gray('\nWaiting for authorization callback on port 8085...'));
 
@@ -182,12 +181,12 @@ program
             const code = urlObj.searchParams.get('code');
             if (code) {
               res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-              res.end('<h1>Authentication successful!</h1><p>You can close this window now and return to the CLI.</p>');
+              res.end('<h1>Authentication Successful</h1><p>You may now close this browser tab and return to your terminal.</p>');
               resolve(code);
             } else {
               res.writeHead(400);
-              res.end('Authentication failed: No code found in URL.');
-              reject(new Error('No code received.'));
+              res.end('Authentication failed: Missing authorization code in callback URL.');
+              reject(new Error('No authorization code received.'));
             }
           } catch (err) {
             reject(err);
@@ -199,7 +198,7 @@ program
         server.setTimeout(180000);
         server.on('timeout', () => {
           server.close();
-          reject(new Error('OAuth timeout after 3 minutes.'));
+          reject(new Error('OAuth authentication timed out after 3 minutes.'));
         });
 
         server.listen(8085, (err) => {
@@ -217,7 +216,7 @@ program
 
       if (!oauthCode) throw new Error('No authorization code provided.');
 
-      console.log(chalk.yellow('Exchanging code for Refresh Token...'));
+      console.log(chalk.yellow('Exchanging authorization code for OAuth2 Refresh Token...'));
       const tokenResponse = await axios.post('https://oauth2.googleapis.com/token', {
         code: oauthCode,
         client_id: clientId,
@@ -243,11 +242,34 @@ program
     }
   });
 
-// AUDIT Command
+// Helper function to print strategy audit result
+function printStrategyAuditResult(result) {
+  const color = result.compliancePercent >= 80 ? chalk.green : result.compliancePercent >= 60 ? chalk.yellow : chalk.red;
+  console.log(chalk.bold.white(`Strategy: ${result.strategyTitle}`));
+  console.log(`  Compliance Score: ${color(result.compliancePercent + '%')} (${result.status})`);
+  
+  if (result.findings && result.findings.length > 0) {
+    console.log(chalk.cyan(`  Audit Findings:`));
+    result.findings.forEach(f => console.log(chalk.gray(`    • ${f}`)));
+  }
+
+  if (result.missingComponents && result.missingComponents.length > 0) {
+    console.log(chalk.red(`  Missing Components:`));
+    result.missingComponents.forEach(mc => console.log(chalk.gray(`    - ${mc}`)));
+  }
+
+  if (result.implementationSteps && result.implementationSteps.length > 0) {
+    console.log(chalk.green(`  Actionable Implementation Roadmap:`));
+    result.implementationSteps.forEach((step, idx) => console.log(chalk.gray(`    ${idx + 1}. ${step}`)));
+  }
+  console.log(chalk.gray('--------------------------------------------------'));
+}
+
+// FULL AUDIT Command
 program
   .command('audit')
   .alias('checkup')
-  .description('Run Advanced Google Ads Account Audit & Strategy SOP Compliance Checkup')
+  .description('Run Full Advanced Google Ads Account Audit & Strategy SOP Compliance Checkup')
   .option('-c, --customer-id <id>', 'Override Google Ads Customer ID')
   .action(async (options) => {
     console.log(chalk.bold.cyan('\n=== Advanced Google Ads Account Audit (High Ticket Lead Gen) ===\n'));
@@ -276,20 +298,7 @@ program
       console.log(`Overall Compliance Score: ${chalk.bold.cyan(report.overallAuditScorePercent + '%')}\n`);
 
       report.strategyCheckupResults.forEach(s => {
-        const color = s.compliancePercent >= 80 ? chalk.green : s.compliancePercent >= 60 ? chalk.yellow : chalk.red;
-        console.log(chalk.bold.white(`Strategy: ${s.strategyTitle}`));
-        console.log(`  Erfüllungsgrad: ${color(s.compliancePercent + '%')} (${s.status})`);
-        
-        if (s.missingComponents && s.missingComponents.length > 0) {
-          console.log(chalk.red(`  Fehlende Komponenten:`));
-          s.missingComponents.forEach(mc => console.log(chalk.gray(`    - ${mc}`)));
-        }
-
-        if (s.implementationSteps && s.implementationSteps.length > 0) {
-          console.log(chalk.cyan(`  Handlungsanweisung zur 100% Umsetzung:`));
-          s.implementationSteps.forEach((step, idx) => console.log(chalk.gray(`    ${idx + 1}. ${step}`)));
-        }
-        console.log(chalk.gray('--------------------------------------------------'));
+        printStrategyAuditResult(s);
       });
 
       const __filename = fileURLToPath(import.meta.url);
@@ -338,6 +347,119 @@ program
     }
   });
 
+// ============================================================================
+// DEDICATED INDIVIDUAL STRATEGY COMMANDS (11 STRATEGIES)
+// ============================================================================
+
+const STRATEGIES_LIST = [
+  {
+    slug: 'conversion-value-hierarchy',
+    aliases: ['hierarchy', 'strategy-01'],
+    title: 'Conversion Value Hierarchy',
+    desc: 'Audit two-stage conversion hierarchy, micro-conversions and offline CRM value imports'
+  },
+  {
+    slug: 'angles-detection',
+    aliases: ['angles', 'strategy-02'],
+    title: 'Angles Detection & Competitor Analysis',
+    desc: 'Audit pain point and solution frame alignment against market competitors'
+  },
+  {
+    slug: 'ads-frameworks',
+    aliases: ['frameworks', 'strategy-03'],
+    title: 'Ads Frameworks & Psychological Copy',
+    desc: 'Audit the 6 framework clusters (PAS, AIDA, FAB, Sophistication, Lifecycle) and pre-scoring'
+  },
+  {
+    slug: 'massen-asset-testing',
+    aliases: ['mass-asset-testing', 'asset-testing', 'strategy-04'],
+    title: 'Mass Asset Testing (570-1380 Assets)',
+    desc: 'Audit creative test volume per campaign offer and matrix pre-screening'
+  },
+  {
+    slug: 'ai-assets-bulk-launch',
+    aliases: ['bulk-launch', 'bulk-upload', 'strategy-05'],
+    title: 'AI Assets Bulk Launch (Google Ads Editor)',
+    desc: 'Audit 10x20 bulk staging architecture and strict PAUSED launch safeguards'
+  },
+  {
+    slug: 'budget-shifting',
+    aliases: ['shifting', 'strategy-06'],
+    title: 'Budget Shifting Across 9 Reporting Levels',
+    desc: 'Audit systematic bi-weekly budget reallocation to top-performing angles'
+  },
+  {
+    slug: 'micro-location-testing',
+    aliases: ['micro-location', 'locations', 'strategy-07'],
+    title: 'Micro Location Testing (1-km Radius)',
+    desc: 'Audit hyper-local radius coordinate needleheads via Maps geospatial data'
+  },
+  {
+    slug: 'pmax-zielgruppensignale',
+    aliases: ['pmax-audience-signals', 'audience-signals', 'strategy-08'],
+    title: 'PMax Audience Signals (5-Tier Framework)',
+    desc: 'Audit 5-tier audience signals (Narrow, Standard, Broad, 30s Visitors, Competitors)'
+  },
+  {
+    slug: 'ziel-cpa-tests',
+    aliases: ['target-cpa-tests', 'cpa-tests', 'strategy-09'],
+    title: 'Target CPA Tests & Algorithmic Conditioning',
+    desc: 'Audit continuous raising and lowering protocol (10-15% steps) over 2-3 months'
+  },
+  {
+    slug: 'ziel-roas-tests',
+    aliases: ['target-roas-tests', 'roas-tests', 'strategy-10'],
+    title: 'Target ROAS Tests (Maximize Conversion Value)',
+    desc: 'Audit step-wise ROAS adjustment protocol (10-20% increments) in Value Bidding'
+  },
+  {
+    slug: 'kuenstliche-budget-ueberhoehung',
+    aliases: ['artificial-budget-inflation', 'budget-inflation', 'strategy-11'],
+    title: 'Artificial Budget Inflation (Target Impression Share)',
+    desc: 'Audit Top of Page domination protocol for high-ticket low-volume campaigns'
+  }
+];
+
+STRATEGIES_LIST.forEach(strat => {
+  const cmd = program
+    .command(strat.slug)
+    .description(`Audit Strategy: ${strat.title} - ${strat.desc}`)
+    .option('-c, --customer-id <id>', 'Override Google Ads Customer ID');
+
+  strat.aliases.forEach(alias => cmd.alias(alias));
+
+  cmd.action(async (options) => {
+    console.log(chalk.bold.cyan(`\n=== Strategy Audit: ${strat.title} ===\n`));
+    const config = getConfig();
+    if (options.customerId) {
+      config.customerId = options.customerId;
+    }
+
+    try {
+      const auditor = new AuditAgent();
+      const result = auditor.evaluateSingleStrategy(strat.slug, config);
+      printStrategyAuditResult(result);
+      console.log(chalk.green(`[OK] Strategy evaluation complete for: ${strat.title}\n`));
+    } catch (err) {
+      console.error(chalk.bold.red(`[ERROR] Strategy audit failed: ${err.message}`));
+    }
+  });
+});
+
+// Generic STRATEGY command
+program
+  .command('strategy <name>')
+  .description('Audit a specific strategy SOP by name or slug')
+  .action((name) => {
+    const auditor = new AuditAgent();
+    try {
+      const result = auditor.evaluateSingleStrategy(name, getConfig());
+      printStrategyAuditResult(result);
+    } catch (err) {
+      console.error(chalk.red(`[ERROR]: ${err.message}`));
+    }
+  });
+
 // REFRESH TOKEN Command
 program
   .command('refresh-token')
@@ -352,8 +474,6 @@ program
       console.error(chalk.red('[ERROR]:'), error.message);
     }
   });
-
-
 
 // AGENT LIST Command
 const agentCmd = program.command('agent').description('Manage Persistent AI Agents');
