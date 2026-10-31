@@ -3,261 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Google Ads Audit - 11 Strategy SOP Circuit Architecture</title>
+  <title>Advanced Google Ads Audit · System Architecture</title>
   <style>
     body {
       margin: 0;
       padding: 40px 20px;
-      background: #F1F5F9;
+      background: #FFFFFF;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
     .circuit-wrapper {
-      max-width: 1040px;
+      max-width: 820px;
       width: 100%;
-      background: #FFFFFF;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-      border: 1px solid #E2E8F0;
-    }
-    .circuit-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #0F172A;
-      margin-bottom: 6px;
-    }
-    .circuit-desc {
-      font-size: 13px;
-      color: #64748B;
-      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
   <div class="circuit-wrapper">
-    <div class="circuit-title">Advanced Google Ads Audit · 11 Strategy SOP Circuit Architecture</div>
-    <div class="circuit-desc">Ingests live Google Ads account data via API v24 and evaluates structural compliance against 11 proprietary Standard Operating Procedures.</div>
-    <svg class="swa-circuit-svg" viewBox="0 0 1000 640" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      .dbt-node { fill: #FFFFFF; stroke: #E2E8F0; stroke-width: 1.2; rx: 6px; transition: all 0.2s ease; }
-      .dbt-node:hover { stroke: #159A35; fill: #F0FDF4; }
-      .dbt-node-icon { fill: #F8FAFC; stroke: #E2E8F0; stroke-width: 1; rx: 5px; }
-      .source-node { fill: #0F172A; stroke: #1E293B; stroke-width: 1.5; rx: 8px; }
-      .output-node { fill: #0F172A; stroke: #1E293B; stroke-width: 1.5; rx: 8px; }
-      .circuit-bg { fill: #F8FAFC; stroke: #E2E8F0; stroke-width: 1; rx: 10px; }
-      text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
-      .badge-txt { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 6.5px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; letter-spacing: 0.04em; }
-    </style>
+    <svg class="swa-circuit-svg" viewBox="0 0 740 330" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="c2-arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#159A35" />
+      </marker>
+      <marker id="c2-arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#7C3AED" />
+      </marker>
+    </defs>
 
-    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#159A35" />
-    </marker>
-    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#2563EB" />
-    </marker>
-    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#7C3AED" />
-    </marker>
-    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#94A3B8" />
-    </marker>
-  </defs>
+    <!-- Column 1 to Column 2 -->
+    <path d="M 120 130 L 120 170" stroke="#159A35" stroke-width="1.8" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 45, 280 45" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 105, 280 105" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 165, 280 165" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 225, 280 225" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 285, 280 285" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
 
-  <!-- Container Background -->
-  <rect width="100%" height="100%" fill="#F8FAFC" rx="10" stroke="#E2E8F0" stroke-width="1"/>
+    <!-- Column 2 to Column 3 -->
+    <path d="M 460 45 C 500 45, 490 105, 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
+    <path d="M 460 105 L 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
+    <path d="M 460 165 C 500 165, 490 105, 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
+    <path d="M 460 225 C 500 225, 490 105, 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
+    <path d="M 460 285 C 500 285, 490 105, 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
 
-  <!-- Subtle Cluster Groups -->
-  <rect x="230" y="20" width="235" height="475" rx="8" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="1.5" />
-  <text x="245" y="42" fill="#94A3B8" font-size="8.5" font-weight="700" letter-spacing="0.08em">CLUSTER A: VALUE &amp; BIDDING</text>
+    <path d="M 620 130 L 620 170" stroke="#7C3AED" stroke-width="1.8" fill="none" marker-end="url(#c2-arrow-purple)" />
 
-  <rect x="480" y="20" width="240" height="475" rx="8" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="1.5" />
-  <text x="495" y="42" fill="#94A3B8" font-size="8.5" font-weight="700" letter-spacing="0.08em">CLUSTER B: CREATIVES &amp; ANGLES</text>
+    <!-- Node 1: Ad Copy Baseline -->
+    <g class="node-group">
+      <rect class="dbt-node" x="30" y="80" width="180" height="50" rx="6" />
+      <rect class="dbt-node-icon" x="38" y="88" width="34" height="34" rx="4" />
+      <image href="data:image/png;base64,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" xlink:href="data:image/png;base64,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" x="43" y="83" width="24" height="24" preserveAspectRatio="xMidYMid meet" />
+      <text x="80" y="101" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">Bestandsanzeige</text>
+      <text x="80" y="115" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Google Ads Import</text>
+      <rect x="155" y="74" width="45" height="12" rx="3" fill="#159A35" />
+      <text x="177" y="82.5" fill="#FFFFFF" font-size="6.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">INPUT</text>
+    </g>
 
-  <rect x="735" y="20" width="245" height="475" rx="8" fill="#FFFFFF" stroke="#F1F5F9" stroke-width="1.5" />
-  <text x="750" y="42" fill="#94A3B8" font-size="8.5" font-weight="700" letter-spacing="0.08em">CLUSTER C: SCALING &amp; STEERING</text>
+    <!-- Node 2: Creative Pre-Production -->
+    <g class="node-group">
+      <rect class="dbt-node" x="30" y="170" width="180" height="50" rx="6" />
+      <rect class="dbt-node-icon" x="38" y="178" width="34" height="34" rx="4" />
+      <g transform="translate(43, 184) scale(0.17)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="80" y="191" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">Audit Engine</text>
+      <text x="80" y="205" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">SOP-Compliance Checkup</text>
+      <rect x="145" y="164" width="58" height="12" rx="3" fill="#7C3AED" />
+      <text x="174" y="172.5" fill="#FFFFFF" font-size="6.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">AUDIT</text>
+    </g>
 
-  <!-- Connection Paths (Account -> Cluster Modules) -->
-  <path d="M 200 240 C 215 240, 215 85, 240 85" stroke="#159A35" stroke-width="1.6" fill="none" marker-end="url(#arrow-green)" />
-  <path d="M 200 240 C 215 240, 215 195, 240 195" stroke="#159A35" stroke-width="1.6" fill="none" marker-end="url(#arrow-green)" />
-  <path d="M 200 240 C 215 240, 215 305, 240 305" stroke="#159A35" stroke-width="1.6" fill="none" marker-end="url(#arrow-green)" />
-  <path d="M 200 240 C 215 240, 215 415, 240 415" stroke="#159A35" stroke-width="1.6" fill="none" marker-end="url(#arrow-green)" />
+    <!-- COLUMN 2: 5 Swarm Personas -->
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="20" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="26" width="30" height="34" rx="4" />
+      <g transform="translate(291, 32) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="39" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">STRAT-01 · Value Hierarchy</text>
+      <text x="326" y="52" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Hockey-Stick &amp; OCI Import</text>
+      <rect x="412" y="15" width="42" height="11" rx="2" fill="#7C3AED" />
+      <text x="433" y="23" fill="#FFFFFF" font-size="6" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">VALUE</text>
+    </g>
 
-  <!-- Intra-Cluster Signal Bridges -->
-  <path d="M 455 85 C 470 85, 470 85, 490 85" stroke="#2563EB" stroke-width="1.4" fill="none" marker-end="url(#arrow-blue)" />
-  <path d="M 455 195 C 470 195, 470 195, 490 195" stroke="#2563EB" stroke-width="1.4" fill="none" marker-end="url(#arrow-blue)" />
-  <path d="M 455 305 C 470 305, 470 305, 490 305" stroke="#2563EB" stroke-width="1.4" fill="none" marker-end="url(#arrow-blue)" />
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="80" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="86" width="30" height="34" rx="4" />
+      <g transform="translate(291, 92) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="99" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">STRAT-02 · Angles Detection</text>
+      <text x="326" y="112" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Pain Points &amp; Scrapes</text>
+      <rect x="408" y="75" width="46" height="11" rx="2" fill="#2563EB" />
+      <text x="431" y="83" fill="#FFFFFF" font-size="6" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">ANGLES</text>
+    </g>
 
-  <path d="M 710 85 C 725 85, 725 85, 745 85" stroke="#7C3AED" stroke-width="1.4" fill="none" marker-end="url(#arrow-purple)" />
-  <path d="M 710 195 C 725 195, 725 195, 745 195" stroke="#7C3AED" stroke-width="1.4" fill="none" marker-end="url(#arrow-purple)" />
-  <path d="M 710 305 C 725 305, 725 305, 745 305" stroke="#7C3AED" stroke-width="1.4" fill="none" marker-end="url(#arrow-purple)" />
-  <path d="M 710 415 C 725 415, 725 415, 745 415" stroke="#7C3AED" stroke-width="1.4" fill="none" marker-end="url(#arrow-purple)" />
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="140" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="146" width="30" height="34" rx="4" />
+      <g transform="translate(291, 152) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="159" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">STRAT-03 · Ads Frameworks</text>
+      <text x="326" y="172" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">6 Cluster Copywriting</text>
+      <rect x="408" y="135" width="46" height="11" rx="2" fill="#F59E0B" />
+      <text x="431" y="143" fill="#FFFFFF" font-size="6" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">COPY</text>
+    </g>
 
-  <!-- Outflow Paths -> Consolidated Report -->
-  <path d="M 347 445 C 347 485, 520 485, 520 520" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3,3" fill="none" />
-  <path d="M 600 445 C 600 485, 560 485, 560 520" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3,3" fill="none" />
-  <path d="M 857 445 C 857 485, 600 485, 600 520" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3,3" fill="none" marker-end="url(#arrow-slate)" />
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="200" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="206" width="30" height="34" rx="4" />
+      <g transform="translate(291, 212) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="219" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">STRAT-04 · Mass Testing</text>
+      <text x="326" y="232" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">10×20 Bulk Rollout</text>
+      <rect x="412" y="195" width="42" height="11" rx="2" fill="#159A35" />
+      <text x="433" y="203" fill="#FFFFFF" font-size="6" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">TESTING</text>
+    </g>
 
-  <!-- SOURCE NODE: Google Ads Account API -->
-  <g class="source-group">
-    <rect class="source-node" x="25" y="205" width="175" height="70" />
-    <circle cx="48" cy="240" r="14" fill="#1E293B" />
-    <path d="M 42 240 L 46 235 L 53 245" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="72" y="232" fill="#FFFFFF" font-size="9.5" font-weight="700">Google Ads Account</text>
-    <text x="72" y="246" fill="#94A3B8" font-size="7.5">API v24 SearchStream</text>
-    <text x="72" y="258" fill="#38BDF8" font-size="7" font-family="monospace">Live Account Feed</text>
-    <rect x="130" y="197" width="62" height="13" rx="3" fill="#159A35" />
-    <text x="161" y="206" class="badge-txt">LIVE AUDIT</text>
-  </g>
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="260" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="266" width="30" height="34" rx="4" />
+      <g transform="translate(291, 272) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="279" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">STRAT-05 · Budget Shifting</text>
+      <text x="326" y="292" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">9-Ebenen Reallokation</text>
+      <rect x="398" y="255" width="56" height="11" rx="2" fill="#EF4444" />
+      <text x="426" y="263" fill="#FFFFFF" font-size="5.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">BUDGET</text>
+    </g>
 
-  <!-- ==================== CLUSTER A: 3 STRATEGIES ==================== -->
-  <!-- Strategy 01: Conversion Value Hierarchy -->
-  <g class="node-group">
-    <rect class="dbt-node" x="240" y="60" width="215" height="52" />
-    <rect class="dbt-node-icon" x="248" y="70" width="32" height="32" />
-    <text x="264" y="89" fill="#159A35" font-size="11" font-weight="bold" text-anchor="middle">01</text>
-    <text x="288" y="80" fill="#0F172A" font-size="8.5" font-weight="700">Conversion Value Hierarchy</text>
-    <text x="288" y="93" fill="#64748B" font-size="7">Qualified Lead OCI &amp; Two-Tier</text>
-    <rect x="395" y="54" width="52" height="12" rx="3" fill="#159A35" />
-    <text x="421" y="62.5" class="badge-txt">TRACKING</text>
-  </g>
+    <!-- COLUMN 3: Forecaster & Final Mutator -->
+    <g class="node-group">
+      <rect class="dbt-node" x="530" y="80" width="180" height="50" rx="6" />
+      <rect class="dbt-node-icon" x="538" y="88" width="34" height="34" rx="4" />
+      <g transform="translate(543, 94) scale(0.17)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="580" y="101" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">Audit Report</text>
+      <text x="580" y="115" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">100% SOP Compliance Score</text>
+      <rect x="646" y="74" width="56" height="12" rx="3" fill="#2563EB" />
+      <text x="674" y="82.5" fill="#FFFFFF" font-size="6.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">REPORT</text>
+    </g>
 
-  <!-- Strategy 09: Ziel CPA Tests -->
-  <g class="node-group">
-    <rect class="dbt-node" x="240" y="170" width="215" height="52" />
-    <rect class="dbt-node-icon" x="248" y="180" width="32" height="32" />
-    <text x="264" y="199" fill="#159A35" font-size="11" font-weight="bold" text-anchor="middle">09</text>
-    <text x="288" y="190" fill="#0F172A" font-size="8.5" font-weight="700">Target CPA Tests</text>
-    <text x="288" y="203" fill="#64748B" font-size="7">Conversion Volume Calibration</text>
-    <rect x="405" y="164" width="42" height="12" rx="3" fill="#159A35" />
-    <text x="426" y="172.5" class="badge-txt">BIDDING</text>
-  </g>
-
-  <!-- Strategy 10: Ziel ROAS Tests -->
-  <g class="node-group">
-    <rect class="dbt-node" x="240" y="280" width="215" height="52" />
-    <rect class="dbt-node-icon" x="248" y="290" width="32" height="32" />
-    <text x="264" y="309" fill="#159A35" font-size="11" font-weight="bold" text-anchor="middle">10</text>
-    <text x="288" y="300" fill="#0F172A" font-size="8.5" font-weight="700">Target ROAS Tests</text>
-    <text x="288" y="313" fill="#64748B" font-size="7">Deal Value Bidding Thresholds</text>
-    <rect x="405" y="274" width="42" height="12" rx="3" fill="#159A35" />
-    <text x="426" y="282.5" class="badge-txt">SCALING</text>
-  </g>
-
-  <!-- Strategy Info Summary Box Cluster A -->
-  <g class="node-group">
-    <rect class="dbt-node" x="240" y="390" width="215" height="52" fill="#F8FAFC" stroke="#CBD5E1" />
-    <text x="252" y="411" fill="#475569" font-size="7.5" font-weight="600">Bidding SOP Compliance:</text>
-    <text x="252" y="425" fill="#64748B" font-size="7">Eliminates flat conversion values</text>
-    <text x="252" y="435" fill="#159A35" font-size="7" font-weight="700">Enforces Hockey-Stick Margins</text>
-  </g>
-
-  <!-- ==================== CLUSTER B: 4 STRATEGIES ==================== -->
-  <!-- Strategy 02: Angles Detection -->
-  <g class="node-group">
-    <rect class="dbt-node" x="490" y="60" width="220" height="52" />
-    <rect class="dbt-node-icon" x="498" y="70" width="32" height="32" />
-    <text x="514" y="89" fill="#2563EB" font-size="11" font-weight="bold" text-anchor="middle">02</text>
-    <text x="538" y="80" fill="#0F172A" font-size="8.5" font-weight="700">Angles Detection</text>
-    <text x="538" y="93" fill="#64748B" font-size="7">Competitor Pain Point Scraping</text>
-    <rect x="655" y="54" width="47" height="12" rx="3" fill="#2563EB" />
-    <text x="678" y="62.5" class="badge-txt">ANGLES</text>
-  </g>
-
-  <!-- Strategy 03: Ads Frameworks -->
-  <g class="node-group">
-    <rect class="dbt-node" x="490" y="170" width="220" height="52" />
-    <rect class="dbt-node-icon" x="498" y="180" width="32" height="32" />
-    <text x="514" y="199" fill="#2563EB" font-size="11" font-weight="bold" text-anchor="middle">03</text>
-    <text x="538" y="190" fill="#0F172A" font-size="8.5" font-weight="700">Ads Frameworks</text>
-    <text x="538" y="203" fill="#64748B" font-size="7">Structured Metaphors &amp; Copy</text>
-    <rect x="662" y="164" width="40" height="12" rx="3" fill="#2563EB" />
-    <text x="682" y="172.5" class="badge-txt">COPY</text>
-  </g>
-
-  <!-- Strategy 04: Massen Asset Testing -->
-  <g class="node-group">
-    <rect class="dbt-node" x="490" y="280" width="220" height="52" />
-    <rect class="dbt-node-icon" x="498" y="290" width="32" height="32" />
-    <text x="514" y="309" fill="#2563EB" font-size="11" font-weight="bold" text-anchor="middle">04</text>
-    <text x="538" y="300" fill="#0F172A" font-size="8.5" font-weight="700">Mass Asset Testing</text>
-    <text x="538" y="313" fill="#64748B" font-size="7">Creative Matrix &amp; Pre-Filter</text>
-    <rect x="655" y="274" width="47" height="12" rx="3" fill="#2563EB" />
-    <text x="678" y="282.5" class="badge-txt">TESTING</text>
-  </g>
-
-  <!-- Strategy 05: AI Assets Bulk Launch -->
-  <g class="node-group">
-    <rect class="dbt-node" x="490" y="390" width="220" height="52" />
-    <rect class="dbt-node-icon" x="498" y="400" width="32" height="32" />
-    <text x="514" y="419" fill="#2563EB" font-size="11" font-weight="bold" text-anchor="middle">05</text>
-    <text x="538" y="410" fill="#0F172A" font-size="8.5" font-weight="700">AI Assets Bulk Launch</text>
-    <text x="538" y="423" fill="#64748B" font-size="7">PAUSED Launch &amp; API Safeguards</text>
-    <rect x="655" y="384" width="47" height="12" rx="3" fill="#2563EB" />
-    <text x="678" y="392.5" class="badge-txt">LAUNCH</text>
-  </g>
-
-  <!-- ==================== CLUSTER C: 4 STRATEGIES ==================== -->
-  <!-- Strategy 06: Budget Shifting -->
-  <g class="node-group">
-    <rect class="dbt-node" x="745" y="60" width="225" height="52" />
-    <rect class="dbt-node-icon" x="753" y="70" width="32" height="32" />
-    <text x="769" y="89" fill="#7C3AED" font-size="11" font-weight="bold" text-anchor="middle">06</text>
-    <text x="793" y="80" fill="#0F172A" font-size="8.5" font-weight="700">Budget Shifting</text>
-    <text x="793" y="93" fill="#64748B" font-size="7">Dynamic Margin Reallocation</text>
-    <rect x="912" y="54" width="50" height="12" rx="3" fill="#7C3AED" />
-    <text x="937" y="62.5" class="badge-txt">BUDGET</text>
-  </g>
-
-  <!-- Strategy 07: Micro Location Testing -->
-  <g class="node-group">
-    <rect class="dbt-node" x="745" y="170" width="225" height="52" />
-    <rect class="dbt-node-icon" x="753" y="180" width="32" height="32" />
-    <text x="769" y="199" fill="#7C3AED" font-size="11" font-weight="bold" text-anchor="middle">07</text>
-    <text x="793" y="190" fill="#0F172A" font-size="8.5" font-weight="700">Micro Location Testing</text>
-    <text x="793" y="203" fill="#64748B" font-size="7">Postal Code Radius &amp; Exclusions</text>
-    <rect x="920" y="164" width="42" height="12" rx="3" fill="#7C3AED" />
-    <text x="941" y="172.5" class="badge-txt">GEO</text>
-  </g>
-
-  <!-- Strategy 08: PMax Zielgruppensignale -->
-  <g class="node-group">
-    <rect class="dbt-node" x="745" y="280" width="225" height="52" />
-    <rect class="dbt-node-icon" x="753" y="290" width="32" height="32" />
-    <text x="769" y="309" fill="#7C3AED" font-size="11" font-weight="bold" text-anchor="middle">08</text>
-    <text x="793" y="300" fill="#0F172A" font-size="8.5" font-weight="700">PMax Audience Signals</text>
-    <text x="793" y="313" fill="#64748B" font-size="7">Competitor Search &amp; Intent URLs</text>
-    <rect x="912" y="274" width="50" height="12" rx="3" fill="#7C3AED" />
-    <text x="937" y="282.5" class="badge-txt">SIGNALS</text>
-  </g>
-
-  <!-- Strategy 11: Künstliche Budget-Überhöhung -->
-  <g class="node-group">
-    <rect class="dbt-node" x="745" y="390" width="225" height="52" />
-    <rect class="dbt-node-icon" x="753" y="400" width="32" height="32" />
-    <text x="769" y="419" fill="#7C3AED" font-size="11" font-weight="bold" text-anchor="middle">11</text>
-    <text x="793" y="410" fill="#0F172A" font-size="8.5" font-weight="700">Artificial Budget Inflation</text>
-    <text x="793" y="423" fill="#64748B" font-size="7">Bid Cap Guardrails &amp; Top of Page</text>
-    <rect x="907" y="384" width="55" height="12" rx="3" fill="#7C3AED" />
-    <text x="934" y="392.5" class="badge-txt">HEGEMONY</text>
-  </g>
-
-  <!-- ==================== OUTPUT CONSOLIDATION: AUDIT & ROADMAP ==================== -->
-  <g class="output-group">
-    <rect class="output-node" x="180" y="520" width="660" height="80" />
-    <circle cx="220" cy="560" r="20" fill="#1E293B" />
-    <path d="M 212 560 L 218 566 L 228 554" stroke="#10B981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="255" y="548" fill="#FFFFFF" font-size="12" font-weight="700">Consolidated Account Audit Engine &amp; Executive Roadmap</text>
-    <text x="255" y="565" fill="#94A3B8" font-size="8.5">11 Strategy SOP Compliance Scoring · Automated Gap Detection · Step-by-Step Implementation Directives</text>
-    <text x="255" y="580" fill="#10B981" font-size="8" font-family="monospace">Reports saved persistently: storage/runs/audit-report.json &amp; .md</text>
-    <rect x="745" y="530" width="80" height="15" rx="3" fill="#10B981" />
-    <text x="785" y="540.5" class="badge-txt">100% AUDIT</text>
-  </g>
-</svg>
+    <g class="node-group">
+      <rect class="dbt-node" x="530" y="170" width="180" height="50" rx="6" />
+      <rect class="dbt-node-icon" x="538" y="178" width="34" height="34" rx="4" />
+      <image href="data:image/png;base64,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" xlink:href="data:image/png;base64,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" x="543" y="173" width="24" height="24" preserveAspectRatio="xMidYMid meet" />
+      <text x="580" y="191" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">Google Ads Upload</text>
+      <text x="580" y="205" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Upload pausiert via API</text>
+      <rect x="648" y="164" width="54" height="12" rx="3" fill="#159A35" />
+      <text x="675" y="172.5" fill="#FFFFFF" font-size="6.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">UPLOAD</text>
+    </g>
+  </svg>
   </div>
 </body>
 </html>
