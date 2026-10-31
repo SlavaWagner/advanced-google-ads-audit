@@ -5,7 +5,7 @@
 [![Node.js Version](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org)
 
 > **Advanced Google Ads Account Audit & Strategy SOP Compliance Engine for High Ticket Lead Gen**  
-> Evaluates live account architectures against 11 proprietary Standard Operating Procedures (SOPs) and provides step-by-step implementation roadmaps to reach 100% strategy compliance.
+> Evaluates live account architectures against 11 proprietary Standard Operating Procedures (SOPs) and provides step-by-step implementation roadmaps to reach high strategy compliance.
 
 > [!IMPORTANT]
 > **Prerequisite for AI Processing:**
@@ -25,7 +25,7 @@ It connects via the **Google Ads API (v24)** using Google Cloud OAuth2 credentia
 ## Architecture & Circuit Flow
 
 <p align="center">
-  <img src="docs/images/system-circuit.svg" alt="Advanced Google Ads Audit System Circuit" width="100%">
+  <img src="docs/images/system-circuit.png" alt="Advanced Google Ads Audit System Circuit" width="100%">
   <br>
   <em>System Circuit Architecture — <a href="docs/system-circuit.html">View interactive standalone widget</a></em>
 </p>
